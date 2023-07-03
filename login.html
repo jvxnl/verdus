@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Registro de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #c2f09c;
+    }
+    .img{
+    }
+    h1 {
+      text-align: center;
+      color: #136902;
+    }
+    .registro {
+      margin: 50px auto;
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #eff787;
+    }
+    .registro h2 {
+      color: #eb592d;
+      text-align: center;
+    }
+    .registro label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .registro input[type="text"],
+    .registro input[type="email"],
+    .registro input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    .registro button {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #130101;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .registro button:hover {
+      background-color: #fdc140;
+    }
+  </style>
+</head>
+<body>   
+  <h1><u>Los Verdus.</u></h1>
+  <body>
+    <div class="login-container">
+      <h2>Iniciar sesion</h2>
+      <form action="login.php" method="POST">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="nombre" required>
+  
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+  
+        <button type="submit">Iniciar sesion</button>
+        <a href="registro.html" class="redi">Registrate Aqui</a>
+      </form>
+    </div>
+  </body>
+  </html>
+<!-- 
+  <div class="registro">
+    <h2>Registro de Usuarios</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+</body>
+</html> -->

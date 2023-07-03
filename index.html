@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gráfico de Ventas</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="grafico-ventas"></canvas>
+
+  <script>
+    // Obtener el contexto del lienzo del gráfico
+    var ctx = document.getElementById('grafico-ventas').getContext('2d');
+
+    // Datos de ventas semanales y mensuales (ejemplo)
+    var ventasSemanales = [120, 150, 180, 200, 160, 190, 210];
+    var ventasMensuales = [800, 900, 1100, 1000, 950, 1200, 1300, 1400, 1100, 1000, 950, 1200];
+
+    // Calcular el porcentaje de ventas semanales y mensuales
+    var totalVentasSemanales = ventasSemanales.reduce((a, b) => a + b, 0);
+    var totalVentasMensuales = ventasMensuales.reduce((a, b) => a + b, 0);
+
+    var porcentajesSemanales = ventasSemanales.map(venta => ((venta / totalVentasSemanales) * 100).toFixed(2));
+    var porcentajesMensuales = ventasMensuales.map(venta => ((venta / totalVentasMensuales) * 100).toFixed(2));
+
+    // Configuración del gráfico de porcentaje de ventas semanales y mensuales
+    var configPorcentajes = {
+      type: 'pie',
+      data: {
+        labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+        datasets: [{
+          label: 'Porcentaje de ventas semanales',
+          data: porcentajesSemanales,
+          backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#8A2BE2',
+            '#3CB371',
+            '#FF4500',
+            '#9400D3'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Porcentaje de Ventas Semanales'
+          }
+        }
+      }
+    };
+
+    // Crear e inicializar el gráfico de porcentaje de ventas semanales y mensuales
+    var graficoPorcentajes = new Chart(ctx, configPorcentajes);
+  </script>
+</body>
+</html>

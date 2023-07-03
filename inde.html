@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Los Verdus.</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <u><h1>Los Verdus.</h1></u>
+    <br>
+    <h3>Contactanos:</h3>
+    <p>¡Visítanos en nuestra ubicación o contáctanos por teléfono o correo electrónico!</p>
+    <p>Dirección: 810 terraf, Tortuguitas</p>
+    <p>Teléfono: 123-456-7890</p>
+    <p>Correo electrónico: losVerdus@gmail.com</p> 
+
+    <section id="contacto">
+      
+      <form id="formulario-contacto" action="enviar_mensaje.php" method="post">
+        <h3>Dejanos tus datos o envianos un mensaje!</h3>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="nombre">Tel:</label>
+        <input type="text" id="Tel" name="Tel" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 LosVerdus Online. Todos los derechos reservados.</p>
+  </footer>
+ 
+
+</body>
+</html>

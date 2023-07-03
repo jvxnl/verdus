@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gráfico de Estadísticas de Ingresos Mensuales</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="grafico-ingresos"></canvas>
+
+  <script>
+    // Obtener el contexto del lienzo del gráfico
+    var ctx = document.getElementById('grafico-ingresos').getContext('2d');
+
+    // Datos de ingresos de productos mensuales (ejemplo)
+    var ingresosMensuales = {
+      Verduras: [500, 600, 450, 700, 550, 800, 650, 750, 900, 750, 600, 850],
+      Frutas: [400, 550, 600, 500, 700, 600, 750, 550, 650, 800, 700, 600],
+      ArticulosExtras: [300, 400, 350, 500, 450, 550, 400, 600, 550, 450, 500, 550]
+    };
+
+    // Obtener las etiquetas de los meses
+    var meses = Object.keys(ingresosMensuales.Verduras);
+
+    // Configuración del gráfico de estadísticas de ingresos mensuales
+    var configIngresos = {
+      type: 'line',
+      data: {
+        labels: meses,
+        datasets: [{
+          label: 'Verduras.',
+          data: ingresosMensuales.Verduras,
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }, {
+          label: 'Frutas.',
+          data: ingresosMensuales.Frutas,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }, {
+          label: 'ArticulosExtras.',
+          data: ingresosMensuales.ArticulosExtras,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Estadísticas de Ingresos Mensuales por Producto'
+          }
+        }
+      }
+    };
+
+    // Crear e inicializar el gráfico de estadísticas de ingresos mensuales
+    var graficoIngresos = new Chart(ctx, configIngresos);
+  </script>
+</body>
+</html>
